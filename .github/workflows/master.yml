@@ -1,0 +1,12 @@
+name: MasterCI
+on:
+  push:
+    branches:
+      - 'master'
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: Run Security Checks
+        run: bash scripts/pipeline/security_checks.sh
